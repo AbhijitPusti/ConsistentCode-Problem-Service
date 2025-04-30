@@ -1,3 +1,3 @@
 module.exports={
-    ProblemController:require('./problem.contoller')
+    problemController:require('./problem.contoller')
 }
