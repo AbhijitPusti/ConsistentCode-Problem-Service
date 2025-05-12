@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 
 const { PORT } = require('./config/sever.config');
 const apiRouter = require('./routes');
+const errorHandler = require('./utils/ErrorHandler');
 
 const app = express();
 
@@ -18,7 +19,15 @@ app.get('/ping', (req,res) => {
     return res.json({message:'Problem Service is alive'});
 });
 
+//last middleware if any error coes
+app.use(errorHandler)
 
 app.listen(PORT, () =>{
     console.log(`Server started at PORT: ${PORT}`);
+    // try {
+    //     throw new BaseError("Some error", 401 ,"Resource not found", {});
+    // } catch (error) {
+    //     console.log(error,"Something went wrong",error.name,error.details);
+    // }
+    
 })
