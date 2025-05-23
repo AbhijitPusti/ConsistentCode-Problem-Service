@@ -26,12 +26,6 @@ app.use(errorHandler)
 app.listen(PORT, async () =>{
     console.log(`Server started at PORT: ${PORT}`);
     await connectToDB();
-    console.log("Successfull connected to DB");
-    //
-    // try {
-    //     throw new BaseError("Some error", 401 ,"Resource not found", {});
-    // } catch (error) {
-    //     console.log(error,"Something went wrong",error.name,error.details);
-    // }
+    console.log("Successfully connected to DB");
     
 })

@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 
 const problemSchema = new mongoose.Schema({
-      tittle:{
+      title:{
         type:String,
-        required:[true, 'Tittle can not be empty']
+        required:[true, 'Title can not be empty']
       },
       description:{
         type: String,
-        required:[true, 'escription can not be empty']
+        required:[true, 'description can not be empty']
       },
       difficulty: {
         type: String,
@@ -33,6 +33,6 @@ const problemSchema = new mongoose.Schema({
     }
 });
 
-const Problem = mongoose.model('Problem', problemSchema);
+const Problem = mongoose.model('Problem', problemSchema);  //1st parameter-collection name,2nd parameter-the schema object
 
-module.exports = Problem;
+module.exports = Problem;  //Problem->Mongoose model object
