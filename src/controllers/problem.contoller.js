@@ -3,12 +3,8 @@ const NotImplemented = require('../errors/notimplemented.error');
 const { ProblemService } = require('../services');
 const { ProblemRepository } = require('../repositories');
 
-function pingProblemController(req,res){
-    return res.json({message: 'Problem contoller is up'});
-}
-
 const problemService = new ProblemService(new ProblemRepository());
-console.log("start")
+
 async function addProblem(req, res, next) {
     try {
         console.log("incoming req body", req.body);
@@ -55,6 +51,10 @@ function updateProblem(req,res,next){
        } catch (error) {
         next(error);
        }  
+}
+
+function pingProblemController(req,res){
+    return res.json({message: 'Problem contoller is up'});
 }
 
 module.exports = {

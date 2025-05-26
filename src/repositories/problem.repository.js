@@ -4,7 +4,6 @@ class ProblemRepository{
 
     async createProblem(problemData) {
         try {
-
             const problem = await Problem.create({
                 title: problemData.title,
                 description: problemData.description,
